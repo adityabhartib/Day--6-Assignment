@@ -1,30 +1,23 @@
 package com.bridgelabz.JunitTesting;
 
+import java.util.Arrays;
+
 public class swapNibbles {
-    public static void swapnibbles(){
-        int arr[] = {0, 1, 1, 0, 0, 1, 0, 0};
-        int index=4;
-        System.out.print("Print Array:");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
+    static int[]swapNibbles(int[]arr){
+        int temp,j= arr.length-4;
+        for (int i=0;i<4;i++){
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            j++;
         }
-        for (int i=0;i<index;i++){
-            int storeElements,j;
-            storeElements=arr[0];
-            for (j=0;j< arr.length-1;j++){
-                arr[j]=arr[j+1];
-            }
-            arr[j]=storeElements;
-        }
-        System.out.println();
-        System.out.println("After Swap: ");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
-        }
+        return  arr;
     }
 
     public static void main(String[] args) {
-        swapnibbles();
+        int[]arr2={1,0,1,1,0,0,0,1};
+        int[]arr3=swapNibbles(arr2);
+        System.out.println(Arrays.toString(arr3));
     }
 }
 
